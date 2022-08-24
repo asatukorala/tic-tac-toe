@@ -23,53 +23,54 @@
         <div></div>
     </section>
     <section class="bottom">
-        <h2>Player 1</h2>
-        <h2>Player Won</h2>
-        <h2>Player 2</h2>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
     </section>    
     
     <script>
         var player1Name = "Player 1"
         var player2Name = "Player 2"
-        var whoseTurn = null
-        var pieces = document.querySelectorAll('div') // Changed it from board to div as board displys an x if select in the gap between columns and closes the board.
-        
-        for (let i = 0; i < 2; i++) {
-                if (i = 0) {
-                    whoseTurn = player1Name;
-                } else if (i = 1) {
-                    whoseTurn = player2Name;
-                }
+        var whoseTurn = player1Name
+        var finished = false
+        var pieces = document.querySelectorAll("div") 
+        var counter = 0
+
+        document.querySelectorAll("h2")[1].textContent = player1Name
+        document.querySelectorAll("h2")[3].textContent = player2Name
+
+        function checkResult(char) {
+            if (pieces[0].textContent === char && pieces[1].textContent === char && pieces[2].textContent === char || pieces[3].textContent === char && pieces[4].textContent === char && pieces[5].textContent === char || pieces[6].textContent === char && pieces[7].textContent === char && pieces[8].textContent === char || pieces[0].textContent === char && pieces[4].textContent === char && pieces[8].textContent === char || pieces[2].textContent === char && pieces[4].textContent === char && pieces[6].textContent === char || pieces[0].textContent === char && pieces[3].textContent === char && pieces[6].textContent === char || pieces[1].textContent === char && pieces[4].textContent === char && pieces[7].textContent === char || pieces[2].textContent === char && pieces[5].textContent === char && pieces[8].textContent === char) {
+                return true
             }
-        
-        if (whoseTurn = player1Name) { 
-            console.log("Player 1 is Playing") // This displays Player 1 for Player 2 and it's only Player 1 that's displayed. 
-            whoseTurn = player2Name
-        } else if (whoseTurn = player2Name) {
-            console.log("Player 2 is Playing")
-            whoseTurn = player1Name
         }
 
         for (let i = 0; i < pieces.length; i++) {
-            pieces[i].addEventListener('click', function (event) {
-                if (whoseTurn === player1Name) {
-                    var itemClicked = event.target
-                    itemClicked.textContent = "X"
-                    whoseTurn = player2Name
-                } else if (whoseTurn === player2Name) {
-              //      console.log(whoseTurn)
-                    var itemClicked = event.target
-                    itemClicked.textContent = "O"
-                    whoseTurn = player1Name
+            pieces[i].addEventListener("click", function (event) {
+                if (!finished) {
+                    counter++
+                    if (whoseTurn === player1Name) {
+                        var itemClicked = event.target
+                        itemClicked.textContent = "X"
+                        whoseTurn = player2Name
+                    } else if (whoseTurn === player2Name) {
+                        var itemClicked = event.target
+                        itemClicked.textContent = "O"
+                        whoseTurn = player1Name
+                    }
+                    document.querySelectorAll("h2")[0].textContent = whoseTurn + " is Playing" 
+                    if (checkResult("X")) {
+                        document.querySelectorAll("h2")[2].textContent = "Congratulations " + player1Name + "! You won."
+                        finished = true
+                    } else if (checkResult("O")) {
+                        document.querySelectorAll("h2")[2].textContent = "Congratulations " + player2Name + "! You won."
+                        finished = true
+                    }
+                    if (counter === 9) {                           
+                         finished = true
+                         document.querySelectorAll("h2")[2].textContent = "The result is a draw."
+                    }
                 }
-                if (pieces[0].textContent === "X" && pieces[1].textContent === "X" && pieces[2].textContent === "X" || pieces[3].textContent === "X" && pieces[4].textContent === "X" && pieces[5].textContent === "X" || pieces[6].textContent === "X" && pieces[7].textContent === "X" && pieces[8].textContent === "X" || pieces[0].textContent === "X" && pieces[4].textContent === "X" && pieces[8].textContent === "X" || pieces[2].textContent === "X" && pieces[4].textContent === "X" && pieces[6].textContent === "X" || pieces[0].textContent === "X" && pieces[3].textContent === "X" && pieces[6].textContent === "X" || pieces[1].textContent === "X" && pieces[4].textContent === "X" && pieces[7].textContent === "X" || pieces[2].textContent === "X" && pieces[5].textContent === "X" && pieces[8].textContent === "X") {
-                    console.log("Congratulations " + player1Name + "! You won.")
-                } else if (pieces[0].textContent === "O" && pieces[1].textContent === "O" && pieces[2].textContent === "O" || pieces[3].textContent === "O" && pieces[4].textContent === "O" && pieces[5].textContent === "O" || pieces[6].textContent === "O" && pieces[7].textContent === "O" && pieces[8].textContent === "O" || pieces[0].textContent === "O" && pieces[4].textContent === "O" && pieces[8].textContent === "O" || pieces[2].textContent === "O" && pieces[4].textContent === "O" && pieces[6].textContent === "O" || pieces[0].textContent === "O" && pieces[3].textContent === "O" && pieces[6].textContent === "O" || pieces[1].textContent === "O" && pieces[4].textContent === "O" && pieces[7].textContent === "O" || pieces[2].textContent === "O" && pieces[5].textContent === "O" && pieces[8].textContent === "O") {
-                    console.log("Congratulations " + player2Name + "! You won.")
-                }
-                // else if { - This code is breaking it. It needs to be fixed.
-                //     console.log("The result is a draw.")
-                // }
             })
         }
 
