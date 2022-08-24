@@ -31,22 +31,39 @@
     <script>
         var player1Name = "Player 1"
         var player2Name = "Player 2"
-        var whoseTurn
+        var whoseTurn = null
         var pieces = document.querySelectorAll('div') // Changed it from board to div as board displys an x if select in the gap between columns and closes the board.
+        
+        for (let i = 0; i < 2; i++) {
+                if (i = 0) {
+                    whoseTurn = player1Name;
+                } else if (i = 1) {
+                    whoseTurn = player2Name;
+                }
+            }
+        
 
         for (let i = 0; i < pieces.length; i++) {
             pieces[i].addEventListener('click', function (event) {
-                var itemClicked = event.target
-                itemClicked.textContent = "X"
+                if (whoseTurn === player1Name) {
+                    var itemClicked = event.target
+                    itemClicked.textContent = "X"
+                    whoseTurn = player2Name
+                } else if (whoseTurn === player2Name) {
+                    console.log(whoseTurn)
+                    var itemClicked = event.target
+                    itemClicked.textContent = "O"
+                    whoseTurn = player1Name
+                }
+                if (pieces[0].textContent === "O" && pieces[1].textContent === "O" && pieces[2].textContent === "O" || pieces[3].textContent === "O" && pieces[4].textContent === "O" && pieces[5].textContent === "O" || pieces[6].textContent === "O" && pieces[7].textContent === "O" && pieces[8].textContent === "O" || pieces[0].textContent === "O" && pieces[4].textContent === "O" && pieces[8].textContent === "O" || pieces[2].textContent === "O" && pieces[4].textContent === "O" && pieces[6].textContent === "O" || pieces[0].textContent === "O" && pieces[3].textContent === "O" && pieces[6].textContent === "O" || pieces[1].textContent === "O" && pieces[4].textContent === "O" && pieces[7].textContent === "O" || pieces[2].textContent === "O" && pieces[5].textContent === "O" && pieces[8].textContent === "O") {
+                    console.log("Congratulations " + player2Name + "! You won.")
+                }
+                else if (pieces[0].textContent === "X" && pieces[1].textContent === "X" && pieces[2].textContent === "X" || pieces[3].textContent === "X" && pieces[4].textContent === "X" && pieces[5].textContent === "X" || pieces[6].textContent === "X" && pieces[7].textContent === "X" && pieces[8].textContent === "X" || pieces[0].textContent === "X" && pieces[4].textContent === "X" && pieces[8].textContent === "X" || pieces[2].textContent === "X" && pieces[4].textContent === "X" && pieces[6].textContent === "X" || pieces[0].textContent === "X" && pieces[3].textContent === "X" && pieces[6].textContent === "X" || pieces[1].textContent === "X" && pieces[4].textContent === "X" && pieces[7].textContent === "X" || pieces[2].textContent === "X" && pieces[5].textContent === "X" && pieces[8].textContent === "X") {
+                    console.log("Congratulations " + player1Name + "! You won.")
+                }
             })
         }
 
-        // pieces.addEventListener('click', function (event) {
-        //     let piece = event.target
-        //     if (piece.tagName === "DIV") {
-        //         piece.style.backgroundColor = "red"
-        //     }
-        // })
     </script>
 </body>
 </html>
