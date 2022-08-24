@@ -42,6 +42,13 @@
                 }
             }
         
+        if (whoseTurn = player1Name) { 
+            console.log("Player 1 is Playing") // This displays Player 1 for Player 2 and it's only Player 1 that's displayed. 
+            whoseTurn = player2Name
+        } else if (whoseTurn = player2Name) {
+            console.log("Player 2 is Playing")
+            whoseTurn = player1Name
+        }
 
         for (let i = 0; i < pieces.length; i++) {
             pieces[i].addEventListener('click', function (event) {
@@ -50,19 +57,23 @@
                     itemClicked.textContent = "X"
                     whoseTurn = player2Name
                 } else if (whoseTurn === player2Name) {
-                    console.log(whoseTurn)
+              //      console.log(whoseTurn)
                     var itemClicked = event.target
                     itemClicked.textContent = "O"
                     whoseTurn = player1Name
                 }
-                if (pieces[0].textContent === "O" && pieces[1].textContent === "O" && pieces[2].textContent === "O" || pieces[3].textContent === "O" && pieces[4].textContent === "O" && pieces[5].textContent === "O" || pieces[6].textContent === "O" && pieces[7].textContent === "O" && pieces[8].textContent === "O" || pieces[0].textContent === "O" && pieces[4].textContent === "O" && pieces[8].textContent === "O" || pieces[2].textContent === "O" && pieces[4].textContent === "O" && pieces[6].textContent === "O" || pieces[0].textContent === "O" && pieces[3].textContent === "O" && pieces[6].textContent === "O" || pieces[1].textContent === "O" && pieces[4].textContent === "O" && pieces[7].textContent === "O" || pieces[2].textContent === "O" && pieces[5].textContent === "O" && pieces[8].textContent === "O") {
+                if (pieces[0].textContent === "X" && pieces[1].textContent === "X" && pieces[2].textContent === "X" || pieces[3].textContent === "X" && pieces[4].textContent === "X" && pieces[5].textContent === "X" || pieces[6].textContent === "X" && pieces[7].textContent === "X" && pieces[8].textContent === "X" || pieces[0].textContent === "X" && pieces[4].textContent === "X" && pieces[8].textContent === "X" || pieces[2].textContent === "X" && pieces[4].textContent === "X" && pieces[6].textContent === "X" || pieces[0].textContent === "X" && pieces[3].textContent === "X" && pieces[6].textContent === "X" || pieces[1].textContent === "X" && pieces[4].textContent === "X" && pieces[7].textContent === "X" || pieces[2].textContent === "X" && pieces[5].textContent === "X" && pieces[8].textContent === "X") {
+                    console.log("Congratulations " + player1Name + "! You won.")
+                } else if (pieces[0].textContent === "O" && pieces[1].textContent === "O" && pieces[2].textContent === "O" || pieces[3].textContent === "O" && pieces[4].textContent === "O" && pieces[5].textContent === "O" || pieces[6].textContent === "O" && pieces[7].textContent === "O" && pieces[8].textContent === "O" || pieces[0].textContent === "O" && pieces[4].textContent === "O" && pieces[8].textContent === "O" || pieces[2].textContent === "O" && pieces[4].textContent === "O" && pieces[6].textContent === "O" || pieces[0].textContent === "O" && pieces[3].textContent === "O" && pieces[6].textContent === "O" || pieces[1].textContent === "O" && pieces[4].textContent === "O" && pieces[7].textContent === "O" || pieces[2].textContent === "O" && pieces[5].textContent === "O" && pieces[8].textContent === "O") {
                     console.log("Congratulations " + player2Name + "! You won.")
                 }
-                else if (pieces[0].textContent === "X" && pieces[1].textContent === "X" && pieces[2].textContent === "X" || pieces[3].textContent === "X" && pieces[4].textContent === "X" && pieces[5].textContent === "X" || pieces[6].textContent === "X" && pieces[7].textContent === "X" && pieces[8].textContent === "X" || pieces[0].textContent === "X" && pieces[4].textContent === "X" && pieces[8].textContent === "X" || pieces[2].textContent === "X" && pieces[4].textContent === "X" && pieces[6].textContent === "X" || pieces[0].textContent === "X" && pieces[3].textContent === "X" && pieces[6].textContent === "X" || pieces[1].textContent === "X" && pieces[4].textContent === "X" && pieces[7].textContent === "X" || pieces[2].textContent === "X" && pieces[5].textContent === "X" && pieces[8].textContent === "X") {
-                    console.log("Congratulations " + player1Name + "! You won.")
-                }
+                // else if { - This code is breaking it. It needs to be fixed.
+                //     console.log("The result is a draw.")
+                // }
             })
         }
+
+        
 
     </script>
 </body>
