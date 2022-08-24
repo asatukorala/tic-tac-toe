@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Tic-Tac-Toe</h1>
+        <h2>Player 1 is Playing</h2>
+    </header>
+    <section class="board">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <section class="bottom">
+        <h2>Player 1</h2>
+        <h2>Player Won</h2>
+        <h2>Player 2</h2>
+    </section>    
+    
+    <script>
+        var player1Name = "Player 1"
+        var player2Name = "Player 2"
+        var whoseTurn
+        var pieces = document.querySelectorAll('div') // Changed it from board to div as board displys an x if select in the gap between columns and closes the board.
+
+        for (let i = 0; i < pieces.length; i++) {
+            pieces[i].addEventListener('click', function (event) {
+                var itemClicked = event.target
+                itemClicked.textContent = "X"
+            })
+        }
+
+        // pieces.addEventListener('click', function (event) {
+        //     let piece = event.target
+        //     if (piece.tagName === "DIV") {
+        //         piece.style.backgroundColor = "red"
+        //     }
+        // })
+    </script>
+</body>
+</html>

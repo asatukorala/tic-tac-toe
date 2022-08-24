@@ -1,0 +1,16 @@
+header {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr; /* After I've got it working, I need to use Inspect > Element and hover off the sections I want to change to remove spacing. */ 
+
+}
+
+div {
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+}
+
