@@ -4,7 +4,7 @@
 
 # :information_source: About 
 - An online Tic-Tac-Toe game. Click the URL above to play the game. 
-- An except from the code:
+- An excerpt from the code:
 ![Code](https://i.imgur.com/b3mmGk2.jpg)
 
 # :pencil: Tic-Tac-Toe Game Planning
