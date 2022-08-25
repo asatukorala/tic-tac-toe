@@ -70,7 +70,7 @@
                         document.querySelectorAll("h2")[2].textContent = "Congratulations " + player2Name + "! You won."
                         finished = true
                     }
-                    if (counter === 9) {      // This code gives the problem if printing a draw if the result is nine
+                    if (counter === 9) {      
                         console.log(checkResult("X"))
                         if (checkResult("X")) {
                             document.querySelectorAll("h2")[2].textContent = "Congratulations " + player1Name + "! You won."
@@ -82,15 +82,12 @@
                             finished = true
                             document.querySelectorAll("h2")[2].textContent = "The result is a draw." 
                         }              
-                        
                     }
                     if (pieces[i].textContent === "X" || pieces[i].textContent === "O") {
                         pieces[i].removeEventListener("click", handler)
                     }
                 }
-                
             }
-            
         }
 
         let resetGameButton = document.querySelector(".reset")
@@ -101,7 +98,7 @@
                 pieces[i].textContent = ""
             }
             document.querySelectorAll("h2")[0].textContent = "Player 1 is Playing" 
-            document.querySelectorAll("h1")[1].textContent = "The Game Has Begun"
+            document.querySelectorAll("h2")[1].textContent = "The Game Has Begun"
             document.querySelectorAll("h2")[1].textContent = player1Name
             document.querySelectorAll("h2")[3].textContent = player2Name
         })
