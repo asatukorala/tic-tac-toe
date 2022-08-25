@@ -2,7 +2,10 @@
 
 ## :computer: [Click here](https://asatukorala.github.io/tic-tac-toe/) to see my live project!
 
-# Tic-Tac-Toe Game Planning
+# :information_source: About 
+An online Tic-Tac-Toe game. Click the URL above to play the game. 
+
+# :pencil: Tic-Tac-Toe Game Planning
 
 ## High Level Design
 There would be a heading called "Tic Tac Toe". Below the main heading, have a heading to display the player who is playing. The game would consist of a three by three grid with nine squares. The user input would be based on clicks on the squares. After each click, the player's mark would be displayed on the square and a check would be done to see if the player has completed three marks in a line. In this case, display that the player has won. If not, prompt the next player to play.   
@@ -22,10 +25,10 @@ Have a heading on the lower left side of the screen for name of player 1 and a h
 - Have a function called playing which would make the x and o appear on the board in the position where the player selects. Use addEventListener with a click function. 
 - Have a function to check the result using a for loop to calculate if there is three of the same type in a line resulting in a winner. This function would be called after displaying the mark on the square. 
 
-# Cool tech
+# :rocket: Cool tech
 This was implemented in HTML content with CSS layout and JavaScript methods.
 
-# Bugs to fix
+# :anguished: Bugs to fix :
 I thought I had reached MVP stage Wednesday night, but I unfortunately discovered two major bugs on Thursday which I spent time fixing. 
 
 The first of these bugs is that it was possible to click over an existing piece of the board which results in one player overwriting another player's moves thus being functionally incorrect. I fixed it by removing the event listener if the text content on the board has an "X" or a "O". 
@@ -34,10 +37,10 @@ The second of these bugs is that if a game is won by playing all pieces of the b
 
 Removing the event listener affected the reset button, so I kept the event listener and instead created a variable called occupied to check if the text content on the board has an "X" or a "O". If the square is occupied, then you fall out of this function. Hence the function processes onlt unoccupied squares. 
 
-# Lessons learnt
+# :persevere: Lessons learnt
 Tested more throughly to find the issues earlier. 
 
-# Future features
+# :white_check_mark: Future features
 - The ability for the players to enter their names.
 - Images instead of letters for Xs and Os.
 - More CSS content to make it look nicer. 
