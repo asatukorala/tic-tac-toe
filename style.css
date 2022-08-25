@@ -30,7 +30,7 @@ body {
   .players {
     display: flex;
     padding: auto;
-    gap: auto;
+    gap: 25%;
     text-align: center;
     width: 50%;
   }

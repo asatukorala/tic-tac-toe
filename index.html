@@ -49,15 +49,23 @@
         }
       
         for (let i = 0; i < pieces.length; i++) {
+            console.log("1")
             pieces[i].addEventListener("click", handler) 
             function handler(event){
-                if (!finished) {
+                console.log("2")
+                var occupied = false
+                if (pieces[i].textContent === "X" || pieces[i].textContent === "O") {
+                    occupied = true
+                }
+                if (!finished && !occupied) {
+                    console.log("3")
                     counter++
                     if (whoseTurn === player1Name) {
                         var itemClicked = event.target
                         itemClicked.textContent = "X"
                         whoseTurn = player2Name
-                    } else if (whoseTurn === player2Name) {
+                    }
+                     else if (whoseTurn === player2Name) {
                         var itemClicked = event.target
                         itemClicked.textContent = "O"
                         whoseTurn = player1Name
@@ -83,13 +91,10 @@
                             document.querySelectorAll("h2")[2].textContent = "The result is a draw." 
                         }              
                     }
-                    if (pieces[i].textContent === "X" || pieces[i].textContent === "O") {
-                        pieces[i].removeEventListener("click", handler)
-                    }
                 }
-            }
+            }      
         }
-
+        
         let resetGameButton = document.querySelector(".reset")
         
         resetGameButton.addEventListener("click", function (event){
@@ -97,24 +102,17 @@
             for (let i = 0; i < pieces.length; i++) {
                 pieces[i].textContent = ""
             }
+            player1Name = "Player 1"
+            player2Name = "Player 2"
+            whoseTurn = player1Name
+            finished = false
+            pieces = document.querySelectorAll("div") 
+            counter = 0
             document.querySelectorAll("h2")[0].textContent = "Player 1 is Playing" 
-            document.querySelectorAll("h2")[1].textContent = "The Game Has Begun"
+            document.querySelectorAll("h2")[2].textContent = "The Game Has Begun"
             document.querySelectorAll("h2")[1].textContent = player1Name
             document.querySelectorAll("h2")[3].textContent = player2Name
         })
-
-        
-
-        // function resetGame() {
-        //     if (finished = true) {
-        //         let resetButton = document.createElement("button")
-        //         resetButton.innerHTML = "Reset Game"
-        //         document.querySelectorAll("h2")[2].appendChild(resetButton)
-        //         button.addEventListener("click", function (event) {
-        //             formElement.reset()
-        //         })
-        //     }
-        // }
 
     </script>
 </body>
