@@ -24,7 +24,7 @@ Have a heading on the lower left side of the screen for name of player 1 and a h
 - The CSS would be in a separate file.
 - In the JavaScript, set player1Name and player2Name variables to "Player 1" and "Player 2". Later as an extension we can prompt the players to provide names. 
 - Have multiple functions all dealing with the same thing: the user clicks.
-- Have a function called playing which would make the x and o appear on the board in the position where the player selects. Use addEventListener with a click function. 
+- Have a function called playing which would make the "X" and "O" appear on the board in the position where the player selects. Use addEventListener with a click function. 
 - Have a function to check the result using a for loop to calculate if there is three of the same type in a line resulting in a winner. This function would be called after displaying the mark on the square. 
 
 # :rocket: Cool tech
@@ -37,7 +37,7 @@ The first of these bugs is that it was possible to click over an existing piece 
 
 The second of these bugs is that if a game is won by playing all pieces of the board, the message "The result is a draw" was displayed. The reason this occurred is because I put a counter and the counter condition was set to print this message once it reached nine, the amount of pieces on the board. As a result of this, I put additional if statements checking for "X" and "O" under my counter check.
 
-Removing the event listener affected the reset button, so I kept the event listener and instead created a variable called occupied to check if the text content on the board has an "X" or a "O". If the square is occupied, then you fall out of this function. Hence the function processes onlt unoccupied squares. 
+Removing the event listener affected the reset button, so I kept the event listener and instead created a variable called occupied to check if the text content on the board has an "X" or a "O". If the square is occupied, then you fall out of this function. Hence the function processes only unoccupied squares. 
 
 # :persevere: Lessons learnt
 Tested more throughly to find the issues earlier. 
