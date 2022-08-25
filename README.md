@@ -21,3 +21,26 @@ Have a heading on the lower left side of the screen for name of player 1 and a h
 - Have multiple functions all dealing with the same thing: the user clicks.
 - Have a function called playing which would make the x and o appear on the board in the position where the player selects. Use addEventListener with a click function. 
 - Have a function to check the result using a for loop to calculate if there is three of the same type in a line resulting in a winner. This function would be called after displaying the mark on the square. 
+
+# Cool tech
+This was implemented in HTML content with CSS layout and JavaScript methods.
+
+# Bugs to fix
+I thought I had reached MVP stage Wednesday night, but I unfortunately discovered two major bugs on Thursday which I spent time fixing. 
+
+The first of these bugs is that it was possible to click over an existing piece of the board which results in one player overwriting another player's moves thus being functionally incorrect. I fixed it by removing the event listener if the text content on the board has an "X" or a "O". 
+
+The second of these bugs is that if a game is won by playing all pieces of the board, the message "The result is a draw" was displayed. The reason this occurred is because I put a counter and the counter condition was set to print this message once it reached nine, the amount of pieces on the board. As a result of this, I put additional if statements checking for "X" and "O" under my counter check.
+
+Removing the event listener affected the reset button, so I kept the event listener and instead created a variable called occupied to check if the text content on the board has an "X" or a "O". If the square is occupied, then you fall out of this function. Hence the function processes onlt unoccupied squares. 
+
+# Lessons learnt
+Tested more throughly to find the issues earlier. 
+
+# Future features
+- The ability for the players to enter their names.
+- Images instead of letters for Xs and Os.
+- More CSS content to make it look nicer. 
+- Changed the fonts.
+- Animate the "Tic-Tac-Toe" heading.
+- Ensure the design is totally responsive. 
