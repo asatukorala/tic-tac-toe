@@ -8,16 +8,21 @@ header {
 
 .board {
     display: grid;
-    grid-template-columns: auto auto auto; 
+    grid-template-columns: auto auto auto;
+    gap: 5px; 
+    padding: 10px;
+    max-width: 1000px; 
     /* After I've got it working, I need to use Inspect > Element and hover off the sections I want to change to remove spacing. */ 
 }
 
-div { 
+.box { 
     border: 2px solid black;
-    font-size: 1.875rem;
+    font-size: 1.875rem; 
     text-align: center; 
-    width: auto;
-    height: 200px; 
+    /* justify-content: center; */
+    width: auto; 
+    height: 200px;  
+    /* padding: 50px; */
 } 
 
 .players {
