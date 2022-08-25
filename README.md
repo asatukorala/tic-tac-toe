@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-## :computer: [Click here](https://asatukorala.github.io/tic-tac-toe/) to see my live project!
+# :computer: [Click here](https://asatukorala.github.io/tic-tac-toe/) to see my live project!
 
 # :information_source: About 
 An online Tic-Tac-Toe game. Click the URL above to play the game. 
