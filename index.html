@@ -22,12 +22,15 @@
         <div></div>
         <div></div>
     </section>
-    <section class="bottom">
+    <section class="players">
         <h2></h2>
         <h2 id="status">&nbsp; The Game Has Begun &nbsp;</h2>
         <h2 id="p2"></h2>
     </section>    
-    
+    <section class="bottom">
+        <button class="reset">Reset Game</button>
+    </section>
+
     <script>
         var player1Name = "Player 1"
         var player2Name = "Player 2"
@@ -44,9 +47,10 @@
                 return true
             }
         }
-
+      
         for (let i = 0; i < pieces.length; i++) {
-            pieces[i].addEventListener("click", function (event) {
+            pieces[i].addEventListener("click", handler) 
+            function handler(event){
                 if (!finished) {
                     counter++
                     if (whoseTurn === player1Name) {
@@ -70,11 +74,34 @@
                          finished = true
                          document.querySelectorAll("h2")[2].textContent = "The result is a draw."
                     }
+                    if (pieces[i].textContent === "X" || pieces[i].textContent === "O") {
+                        pieces[i].removeEventListener("click", handler)
+                    }
                 }
-            })
+                
+            }
+            
         }
 
+        let button = document.querySelector('button')
         
+        button.addEventListener("click", function (event){
+            console.log("addEventListener")
+        })
+            // document.getElementById("div").reset()
+
+        
+
+        // function resetGame() {
+        //     if (finished = true) {
+        //         let resetButton = document.createElement("button")
+        //         resetButton.innerHTML = "Reset Game"
+        //         document.querySelectorAll("h2")[2].appendChild(resetButton)
+        //         button.addEventListener("click", function (event) {
+        //             formElement.reset()
+        //         })
+        //     }
+        // }
 
     </script>
 </body>
