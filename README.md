@@ -40,7 +40,7 @@ The second of these bugs is that if a game is won by playing all pieces of the b
 Removing the event listener affected the reset button, so I kept the event listener and instead created a variable called occupied to check if the text content on the board has an "X" or a "O". If the square is occupied, then you fall out of this function. Hence the function processes only unoccupied squares. 
 
 # :persevere: Lessons learnt
-Tested more throughly to find the issues earlier. 
+Test more throughly to find the issues earlier. 
 
 # :white_check_mark: Future features
 - The ability for the players to enter their names.
